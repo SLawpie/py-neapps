@@ -1,0 +1,12 @@
+{% extends 'accounts/base.html' %}
+
+{% block auth_content %}
+    <div class="col-sm-12 col-xs-12 col-md-5 col-lg-4">
+        <div class="h3 text-center mb-4">Rejestracja</div>
+        <form method="post" novalidate>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Zarejestruj</button>
+        </form>
+    </div>
+{% endblock %}
