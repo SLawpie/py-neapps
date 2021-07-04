@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'device_detector',
     'start',
     'accounts',
 ]
@@ -120,6 +121,11 @@ USE_L10N = True
 
 USE_TZ = True
 
+
+CSRF_FAILURE_VIEW = 'neapps.views.csrf_failure'
+
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+SESSION_COOKIE_AGE = 86400
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/

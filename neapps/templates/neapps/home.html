@@ -61,8 +61,9 @@
 
     <div class="ne-content">
         <div class="container-fluid">
+            
             <div class="row justify-content-start pt-5 px-4">
-                <div class="col-md-3 text-center">
+                <div class="col-md-2 text-center">
                     <a href="#" class="text-decoration-none">
                       <div class="card ne-card">
                         <div class="card-block">
@@ -73,6 +74,52 @@
                     </a>
                   </div>
             </div>
+
+            <div class="row">       
+                <div class="ml-4">
+                    <div class="row">
+                        <div class="col-2"></div>
+                        <div class="col-8">
+                        <table id="example" class="table table-sm table-hover table-dark ">
+                            <thead>
+                                <tr class="text-white-50">
+                                    <th scope="col" class="text-center">LP</th>
+                                    <th scope="col" class="">UŻYTKOWNIK</th>
+                                    <th scope="col" class="">DATA</th>
+                                    <th scope="col" class="">PRZEGLĄDARKA</th>
+                                    <th scope="col" class="">SYSTEM</th>
+                                    <th scope="col" class="">IP</th>
+                                    <th scope="col" class="text-end pr-3">STATUS</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    {% for login in logins_list %}
+                                    <tr>
+                                        <th scope="row" class="text-center">
+                                            {{ forloop.counter }}
+                                        </th>
+                                        <td>{{ login.user_name }}</td>
+                                        <td>{{ login.created_at }}</td>
+                                        <td>{{ login.browser }}</td>
+                                        <td>{{ login.os }}</td>
+                                        <td>{{ login.ip }}</td>
+                                        <td class="text-end pr-3">
+                                            {% if login.success %}
+                                                <div class="text-success fw-bold">Zalogowano</div>
+                                            {% else %}
+                                            <div class="text-danger fw-bold">Błąd logowania</div>
+                                            {% endif %}
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                        </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
     </div>
 

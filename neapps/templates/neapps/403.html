@@ -1,0 +1,16 @@
+{% extends 'accounts/base.html' %}
+{% load static %}
+
+{% block auth_content %}
+    <div class="col-sm-12 col-xs-12 col-md-5 col-lg-4">
+        <div class="auth-title text-center mb-4">403</div>
+        <div class="h3 text-center">
+             Dostęp zabroniony
+        </div>
+        <div class="d-grid gap-2 mt-4">
+            <a href="{% url 'start' %}" class="btn btn-primary mt-4">
+                Strona startowa
+            </a>
+        </div>
+    </div>
+{% endblock %}

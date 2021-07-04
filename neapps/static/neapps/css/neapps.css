@@ -19,6 +19,7 @@ html, body {
     background-color: #000;
     overflow: hidden;
     font-family: 'Nunito', sans-serif;
+    font-size: 0.75rem;
 }
 
 .ne-topbar {

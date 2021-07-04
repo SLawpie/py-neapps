@@ -3,7 +3,7 @@
 {% block auth_content %}
   <div class="col-sm-12 col-xs-12 col-md-5 col-lg-4">
     <div class="h3 text-center mb-4">Logowanie</div>
-    <form method="POST" action="{% url 'signin' %}">
+    <form method="POST" action="">
       {% csrf_token %}
       <div class="form-group">
         <input id="username" type="username" name="username"
@@ -17,16 +17,20 @@
         placeholder="Podaj hasło.">
       </div>   
       <input id="timeZone" name="timeZone" value="" type="hidden">
+      <div class="text-center fw-bold text-danger mt-4">
+        &nbsp;{{ messages }}&nbsp;
+      </div>
       <div class="pt-1"></div>
       <div class="d-grid gap-2 mt-4">
         <!-- <button type="submit" class="mt-4 auth-btn btn-primary btn-block"> -->
           <button type="submit" class="btn btn-primary">
           Zaloguj
         </button>
-    </div>
+      </div>
     </form>
     <div class="h3 text-center mb-4">{{ login_info }}</div>
-    </div>
+   </div>
+   
 {% endblock %}
 
 {% block page_script %}
